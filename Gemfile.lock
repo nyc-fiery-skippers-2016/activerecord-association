@@ -28,6 +28,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
+  activerecord (= 4.1.0)
   minitest
   sqlite3
