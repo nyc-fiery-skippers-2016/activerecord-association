@@ -14,33 +14,11 @@ ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
 # end
 #
 # Repeat the above template for each table you need to create
-ActiveRecord::Migration.create_table :users do |t|
-  t.string :name
-  t.timestamps
-end
 
-ActiveRecord::Migration.create_table :hotels do |t|
-  t.string :name
-  t.timestamps
-end
-
-ActiveRecord::Migration.create_table :rooms do |t|
-  t.belongs_to :hotel
-  t.integer :rate
-  t.timestamps
-end
-
-ActiveRecord::Migration.create_table :bookings do |t|
-  t.belongs_to :room
-  t.belongs_to :user
-  t.integer :rate
-  t.boolean :paid, default: false
-
-  t.timestamps
-end
 
 #
 # end migrations
+#
 #
 # the following line executes the migrations, don't delete it
 ActiveRecord::Migrator.up "db/migrate"
@@ -55,31 +33,10 @@ ActiveRecord::Migrator.up "db/migrate"
 # end
 #
 # You can define multiple classes, one after another
-#
-class Hotel < ActiveRecord::Base
-  has_many :rooms
-  has_many :bookings, through: :rooms
-  has_many :booked_guests, through: :bookings, source: :guest
-end
 
-class Booking < ActiveRecord::Base
-  belongs_to :room
-  belongs_to :guest, class_name: "User", foreign_key: "user_id"
-end
 
-class Room < ActiveRecord::Base
-  belongs_to :hotel
-  has_many :bookings
-end
 
-class User < ActiveRecord::Base
-  has_many :bookings
-  has_many :booked_rooms, through: :bookings, source: :room
-end
 
-class Rating < ActiveRecord::Base
-  belongs_to :rateable, polymorphic: true
-end
 
 #
 # end migrations
@@ -90,34 +47,24 @@ end
 # so the tests pass.
 #
 # 1) Create three users with the names: "Francis Slim", "Julie Blook" and "Mike Rasta"
-francis = User.create!(name: "Francis Slim")
-julie = User.create!(name: "Julie Blook")
-mike = User.create!(name: "Mike Rasta")
+
 
 # 2) Create a hotel named "Westin" with 5 rooms at a rate of $300
-westin = Hotel.create!(name: "Westin")
-5.times do
-  Room.create!(hotel: westin, rate: 300)
-end
+
 
 # 3) Create a hotel named "Ritz" with 3 rooms at a rate of $500
-ritz = Hotel.create!(name: "Ritz")
-3.times do
-  Room.create!(hotel: ritz, rate: 500)
-end
+
 
 # 4) Create a booking for Julie at the Ritz
-Booking.create!(guest: julie, room: ritz.rooms.first)
+
 
 # 5) Create a booking for Francis at the Westin and another
 #    booking for him at the Ritz
-Booking.create!(guest: francis, room: westin.rooms.first)
-Booking.create!(guest: francis, room: ritz.rooms.last)
+
 
 # 6) Create two bookings for Mike at the Westin that are both
 #    marked as paid
-Booking.create!(guest: mike, room: westin.rooms.last, paid: true)
-Booking.create!(guest: mike, room: westin.rooms[1], paid: true)
+
 
 #
 # end seeds
@@ -126,7 +73,7 @@ Booking.create!(guest: mike, room: westin.rooms[1], paid: true)
 
 #
 # Tests - Do not modify anything below this line. Run the tests by
-# runing this file on the command line (ruby bookings.rb)
+# runing this file on the command line (ruby -rminitest/pride bookings.rb)
 #
 #
 describe "AR Tests" do
