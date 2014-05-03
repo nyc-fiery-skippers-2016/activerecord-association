@@ -21,7 +21,7 @@ For this challenge it's critical that you become familiar with the association o
 
 
 ## Hotel Bookings
-You'll be modeling a simple hotel booking application. This challenge is all about ActiveRecord, it doesn't include any interface.
+You'll be modeling a simple hotel booking application. This challenge is all about ActiveRecord, it doesn't include an interface.
 
 Your challenge is to create migrations, AR classes and seed data for the following models:
 
