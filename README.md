@@ -52,7 +52,7 @@ When all the tests pass, you will be able to answer the following questions.
 
 ### Pre-release:  Orienting to the Environment
 
-We have a test suite that will guide us through the challenge.  The tests can be run through the default rake task—from the command line, run `rake`.  Through the error messages returned by the tests, we can build our application one step at a time: make the next error go away.
+We have a test suite that will guide us through the challenge.  The tests can be run through the default rake task.  Through the error messages returned by the tests, we can build our application one step at a time: make the next error go away.
 
 In addition to a rake task for running the specs, there are the normal rake tasks for working with the database (`db:drop`, `db:create`, `db:migrate`, etc.) and tasks for generating empty models and migrations.
 
