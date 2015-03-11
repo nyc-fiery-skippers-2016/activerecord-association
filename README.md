@@ -23,29 +23,30 @@ When all the tests pass, you will be able to answer the following questions.
 *For a User ...*
 
 1. What is the user's name?
-2. How many bookings does a user have?
-3. Which rooms has a user booked?
-4. At which hotels has a user booked a room?
+2. How many bookings does the user have?
+3. Which rooms has the user booked?
+4. At which hotels has the user booked a room?
 
 
 *For a Hotel ...*
 
 1. What is the hotel's name?
-2. How many rooms does a hotel have?
-3. How many reservations it has?
+2. How many rooms does the hotel have?
+3. How many reservations the hotel has?
 4. Which guests have booked rooms at the hotel?
 
 *For a Room ...*
 
 1. What is the nightly rate?
 2. What is the room number?
-3. In which hotel is a room found?
+3. In which hotel is the room found?
+4. How many bookings the room has?
 
 *For a Booking ...*
 
 1. For which guest is the booking?
 2. For which room is the booking?
-3. At which hotel has the room been booked?
+3. For which hotel is the booking?
 
 ## Releases
 
