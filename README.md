@@ -4,13 +4,14 @@
 
 In this challenge, we are presented with a description of a simplified hotel booking system.  From this desription, we will need to derive a database schema and the corresponding models.  We're going to ignore creating a user interface for the system.  While we will need to design a database schema to support the desired functionality, the main goal of this challenge is to practice writing Active Record associations.
 
-We'll have the opportunity to practice advanced Active Record techniques, including modeling a many-to-many relationship using a join model and using more meaningful names for associations (i.e., breaking naming conventions).
+We'll have the opportunity to practice advanced Active Record techniques, including modeling many-to-many and one-to-one relationships using join models and using more meaningful names for associations (i.e., breaking naming conventions).
 
-The following materials should prove helpful, if it's unclear how to provide options when declaring an association (e.g., `:class_name`, `:foreign_key`, `:through`).
+The following materials should prove helpful, if it's unclear when to use each type of association or how to provide options when declaring an association (e.g., `:class_name`, `:foreign_key`, `:through`).
 
-* [`belongs_to`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to)
-* [`has_many`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_many)
-
+- [`belongs_to`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to)
+- [`has_many`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_many)
+- [	`has_one`](http://apidock.com/rails/v4.1.8/ActiveRecord/Associations/ClassMethods/has_one)
+- [`RailsGuides: Association Basics`](http://guides.rubyonrails.org/association_basics.html)
 
 ### Description of the Hotel Booking System
 
