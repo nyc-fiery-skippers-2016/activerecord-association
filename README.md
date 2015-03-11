@@ -31,7 +31,8 @@ When all the tests pass, you will be able to answer the following questions.
 
 1. What is the hotel's name?
 2. How many rooms does a hotel have?
-3. Which guests have booked rooms at the hotel?
+3. How many reservations it has?
+4. Which guests have booked rooms at the hotel?
 
 *For a Room ...*
 
