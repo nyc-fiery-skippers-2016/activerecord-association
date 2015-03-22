@@ -1,61 +1,67 @@
-# Advanced ActiveRecord Drill
+# AR Associations Drill:  Hotels
 
-## Learning Goals
+## Summary
 
-This challenge will give you the chance to practice advanced AR techniques including:
+In this challenge, we are presented with a description of a simplified hotel booking system.  From this desription, we will need to derive a database schema and the corresponding models.  We're going to ignore creating a user interface for the system.  While we will need to design a database schema to support the desired functionality, the main goal of this challenge is to practice writing Active Record associations.
 
-* modeling a many-to-many relationship using a join model
-* using more meaningful (non-conventional) names for associations.
-* seeding records in a complex schema
+We'll have the opportunity to practice advanced Active Record techniques, including modeling many-to-many and one-to-one relationships using join models and using more meaningful names for associations (i.e., breaking naming conventions).
+
+The following materials should prove helpful, if it's unclear when to use each type of association or how to provide options when declaring an association (e.g., `:class_name`, `:foreign_key`, `:through`).
+
+- [`belongs_to`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to)
+- [`has_many`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_many)
+- [	`has_one`](http://apidock.com/rails/v4.1.8/ActiveRecord/Associations/ClassMethods/has_one)
+- [`RailsGuides: Association Basics`](http://guides.rubyonrails.org/association_basics.html)
+
+### Description of the Hotel Booking System
+
+Tests have been written to guide you through this challenge.  From the tests, you should be able to deduce the proper database schema and associations.
+
+When all the tests pass, you will be able to answer the following questions.
 
 
-## Helpful Materials
+*For a User ...*
 
-If AR isn't your strong suit yet, the following material will prove helpful. You might want to read through these links before starting:
-
-* [Choosing Between has_many through and has_and_belongs_to_many](http://guides.rubyonrails.org/association_basics.html#choosing-between-has-many-through-and-has-and-belongs-to-many)
-* [belongs_to](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to)
-* [has_many](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_many)
-
-For this challenge it's critical that you become familiar with the association options `:class_name` and `:source`. Refer to the API doc links above (under the section 'Options') for details on these options.
+1. What is the user's name?
+2. How many bookings does the user have?
+3. Which rooms has the user booked?
+4. At which hotels has the user booked a room?
 
 
-## Hotel Bookings
-You'll be modeling a simple hotel booking application. This challenge is all about ActiveRecord, it doesn't include an interface.
+*For a Hotel ...*
 
-Your challenge is to create migrations, AR classes and seed data for the following models:
+1. What is the hotel's name?
+2. How many rooms does the hotel have?
+3. How many reservations the hotel has?
+4. Which guests have booked rooms at the hotel?
 
-1. User
-2. Hotel
-3. Room
-4. Booking
+*For a Room ...*
 
-## Requirements
-* A hotel will have many rooms
-* The room model should include a `rate` attribute
-* A user can book a room by way of a booking record
-* You must define your assocations so the following code would work:
+1. What is the nightly rate?
+2. What is the room number?
+3. In which hotel is the room found?
+4. How many bookings the room has?
 
-```ruby
-  @hotel.bookings # returns all the bookings for @hotel
-  @hotel.booked_guests # returns an array of Users that have bookings for @hotel
-  @booking.guest # returns a User
-  @user.booked_rooms # returns an array of rooms this user has booked
-```
+*For a Booking ...*
 
-Run the tests to see the full set of requirements.
+1. For which guest is the booking?
+2. For which room is the booking?
+3. For which hotel is the booking?
 
-## Logistics
-This challenge uses AR in a way you're probably not used to. It uses an in-memory SQLite database. So you won't ever need to run `rake db:migrate` or `rake db:drop`. The entire database is created then dropped each time you run the Ruby file `bookings.rb`.
+## Releases
 
-Refer to the comments in `bookings.rb` for notes of how & where to write your migrations, class definitions and seeds code.
+### Pre-release:  Orienting to the Environment
 
-Why do it this way? By doing all the work in a single file (and using an in-memory database) you'll get faster feedback on your work. Those tedious `rake` tasks take time and only serve as a distraction.
+We have a test suite that will guide us through the challenge.  The tests can be run through the default rake task.  Through the error messages returned by the tests, we can build our application one step at a time: make the next error go away.
 
-## Running the Challenge
-After you've run `bundle install`, run the challenge like so
-```
-ruby -rminitest/pride bookings.rb
-```
+In addition to a rake task for running the specs, there are the normal rake tasks for working with the database (`db:drop`, `db:create`, `db:migrate`, etc.) and tasks for generating empty models and migrations.
 
-There's a lot of failing tests, but don't be overwhelmed. Work through them one at a time.
+### Release 0:  Work Through the Tests
+
+At the beginning of the challenge, there will be many failing tests.  We'll use the failing tests to drive the development of our application.  The tests will lead us to update both our database schema and our model's associations.
+
+This challenge is complete when all of the tests pass.
+
+## Conclusion
+
+In this challenge our goal was to develop a database schema to support the desired behaviors of an application and to write some more advanced Active Record associations.  After completing this challenge, we should have a better handle on when to use the different association types (e.g., belongs_to vs. has_many), the naming conventions around Active Record associations (e.g., what classes does Active Record expect to find) and how to break those conventions, and how to use a join model to associate two other models with each other.
