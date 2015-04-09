@@ -34,8 +34,8 @@ describe Hotel do
     expect(@ritz.rooms).to match_array [@room_1_at_ritz, @room_2_at_ritz]
   end
 
-  it "has reservations" do
-    expect(@ritz.reservations).to match_array [@ritz_booking_1, @ritz_booking_2]
+  it "has bookings" do
+    expect(@ritz.bookings).to match_array [@ritz_booking_1, @ritz_booking_2]
   end
 
   it "has booked guests" do
