@@ -32,7 +32,7 @@ When all the tests pass, you will be able to answer the following questions.
 
 1. What is the hotel's name?
 2. How many rooms does the hotel have?
-3. How many reservations the hotel has?
+3. How many bookings the hotel has?
 4. Which guests have booked rooms at the hotel?
 
 *For a Room ...*
