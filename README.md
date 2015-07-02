@@ -37,11 +37,9 @@ When our associations have been written, we'll be able to answer the following q
 
 ## Releases
 
-### Pre-release:  Orienting to the Environment
+### Pre-release: Setup
+The necessary models and migrations have been provided for us.  We will need to set up the database though.  Lets bundle to make sure that the necessary gems are installed and then create and migrate our database.
 
-We have a test suite that will guide us through the challenge.  The tests can be run through the default rake task.  Through the error messages returned by the tests, we can build our application one step at a time: make the next error go away.
-
-In addition to a rake task for running the specs, there are the normal rake tasks for working with the database (`db:drop`, `db:create`, `db:migrate`, etc.) and tasks for generating empty models and migrations.
 
 ### Release 0:  Work Through the Tests
 
