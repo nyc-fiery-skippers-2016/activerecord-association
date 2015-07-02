@@ -2,7 +2,7 @@
 
 ## Summary
 
-In this challenge, we are presented with a description of a simplified hotel booking system.  From this desription, we will need to derive a database schema and the corresponding models.  We're going to ignore creating a user interface for the system.  While we will need to design a database schema to support the desired functionality, the main goal of this challenge is to practice writing Active Record associations.
+In this challenge, we are presented with a description of a simplified hotel booking system.  From this description, we will need to derive a database schema and the corresponding models.  We're going to ignore creating a user interface for the system.  While we will need to design a database schema to support the desired functionality, the main goal of this challenge is to practice writing Active Record associations.
 
 We'll have the opportunity to practice advanced Active Record techniques, including modeling many-to-many and one-to-one relationships using join models and using more meaningful names for associations (i.e., breaking naming conventions).
 
