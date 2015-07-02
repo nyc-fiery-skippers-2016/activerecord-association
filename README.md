@@ -41,18 +41,25 @@ When our associations have been written, we'll be able to answer the following q
 The necessary models and migrations have been provided for us.  We will need to set up the database though.  Lets bundle to make sure that the necessary gems are installed and then create and migrate our database.
 
 
-### Release 0:  Work Through the Tests
+### Release 0: Declare the Associations
+Tests for each model's associations have been written to provide feedback on the associations that we write (see the files in `spec/models/`).  When all of the tests pass, our associations are written properly.
 
-At the beginning of the challenge, there will be many failing tests.  We'll use the failing tests to drive the development of our application.  The tests will lead us to create our models, update our database schema, and write our model's associations.
+In order to write the desired associations, we'll need to be familiar with declaring different types of associations:
 
-This challenge is complete when all of the tests pass.
+- [:belongs_to][RailsGuides belongs_to] (including its options)
+- [:has_many][RailsGuides has_many] (including its options)
+- [:has_one][RailsGuides has_one] (including its options)
+
 
 ## Conclusion
 
-In this challenge our goal was to develop a database schema to support the desired behaviors of an application and to write some more advanced Active Record associations.  After completing this challenge, we should have a better handle on when to use the different association types (e.g., belongs_to vs. has_many), the naming conventions around Active Record associations (e.g., what classes does Active Record expect to find) and how to break those conventions, and how to use a join model to associate two other models with each other.
+In this challenge our goal was to write some more advanced Active Record associations.  After completing this challenge, we should have a better handle on when to use the different association types (e.g., belongs_to vs. has_many), the naming conventions around Active Record associations (e.g., what classes does Active Record expect to find) and how to break those conventions, and how to use a join model to associate two other models with each other.
 
 [belongs_to]: http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to
 [has_many]: http://apidock.com/rails/v4.2.1/ActiveRecord/Associations/ClassMethods/has_many
 [has_one]: http://apidock.com/rails/v4.2.1/ActiveRecord/Associations/ClassMethods/has_one
 [RailsGuides Associations]: http://guides.rubyonrails.org/association_basics.html
+[RailsGuides belongs_to]: http://guides.rubyonrails.org/association_basics.html#the-belongs-to-association
+[RailsGuides has_many]: http://guides.rubyonrails.org/association_basics.html#the-has-many-association
+[RailsGuides has_one]: http://guides.rubyonrails.org/association_basics.html#the-has-one-association
 
