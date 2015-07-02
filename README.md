@@ -58,7 +58,7 @@ In addition to a rake task for running the specs, there are the normal rake task
 
 ### Release 0:  Work Through the Tests
 
-At the beginning of the challenge, there will be many failing tests.  We'll use the failing tests to drive the development of our application.  The tests will lead us to update both our database schema and our model's associations.
+At the beginning of the challenge, there will be many failing tests.  We'll use the failing tests to drive the development of our application.  The tests will lead us to create our models, update our database schema, and write our model's associations.
 
 This challenge is complete when all of the tests pass.
 
