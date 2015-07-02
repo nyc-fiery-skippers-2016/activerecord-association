@@ -1,46 +1,33 @@
 # AR Associations Drill:  Hotels
 
 ## Summary
+This challenge is a drill to work with [Active Record associations][RailsGuides Associations].  We'll be working with [`:belongs_to`][belongs_to], [`:has_many`][has_many], and [`:has_one`][has_one] associations.  We'll practice breaking Active Record conventions and passing options like `:class_name`, `:foreign_key`, `:through`, and `:source` when declaring associations.
 
-In this challenge, we are presented with a description of a simplified hotel booking system.  From this description, we will need to derive a database schema and the corresponding models.  We're going to ignore creating a user interface for the system.  While we will need to design a database schema to support the desired functionality, the main goal of this challenge is to practice writing Active Record associations.
+![](hotels_schema.png)
 
-We'll have the opportunity to practice advanced Active Record techniques, including modeling many-to-many and one-to-one relationships using join models and using more meaningful names for associations (i.e., breaking naming conventions).
+*Figure 1*. Schema design for this challenge.
 
-The following materials should prove helpful, if it's unclear when to use each type of association or how to provide options when declaring an association (e.g., `:class_name`, `:foreign_key`, `:through`).
-
-- [`belongs_to`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to)
-- [`has_many`](http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/has_many)
-- [	`has_one`](http://apidock.com/rails/v4.1.8/ActiveRecord/Associations/ClassMethods/has_one)
-- [`RailsGuides: Association Basics`](http://guides.rubyonrails.org/association_basics.html)
-
-### Description of the Hotel Booking System
-
-Tests have been written to guide you through this challenge.  From the tests, you should be able to deduce the proper database schema and associations.
-
-When all the tests pass, you will be able to answer the following questions.
-
+We'll focus on writing associations in this challenge, but let's imagine that we're building a full application that allows for booking hotel rooms. Hotels register their rooms with our application, and users can book the hotels' rooms.  We won't worry about booking dates and other real-world details.  We just want to focus on how we can association our models with each other.
+ 
+When our associations have been written, we'll be able to answer the following questions.
 
 *For a User ...*
 
-1. What is the user's name?
-2. How many bookings does the user have?
-3. Which rooms has the user booked?
-4. At which hotels has the user booked a room?
+1. Which bookings were made by the user?
+2. Which rooms has the user booked?
+3. At which hotels has the user booked a room?
 
 
 *For a Hotel ...*
 
-1. What is the hotel's name?
-2. How many rooms does the hotel have?
-3. How many bookings the hotel has?
-4. Which guests have booked rooms at the hotel?
+1. Which rooms are at the hotel?
+2. Which bookings have been made at the hotel?
+3. Which guests have booked rooms at the hotel?
 
 *For a Room ...*
 
-1. What is the nightly rate?
-2. What is the room number?
-3. In which hotel is the room found?
-4. How many bookings the room has?
+1. In which hotel is the room found?
+2. Which bookings are for the room?
 
 *For a Booking ...*
 
@@ -65,3 +52,9 @@ This challenge is complete when all of the tests pass.
 ## Conclusion
 
 In this challenge our goal was to develop a database schema to support the desired behaviors of an application and to write some more advanced Active Record associations.  After completing this challenge, we should have a better handle on when to use the different association types (e.g., belongs_to vs. has_many), the naming conventions around Active Record associations (e.g., what classes does Active Record expect to find) and how to break those conventions, and how to use a join model to associate two other models with each other.
+
+[belongs_to]: http://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to
+[has_many]: http://apidock.com/rails/v4.2.1/ActiveRecord/Associations/ClassMethods/has_many
+[has_one]: http://apidock.com/rails/v4.2.1/ActiveRecord/Associations/ClassMethods/has_one
+[RailsGuides Associations]: http://guides.rubyonrails.org/association_basics.html
+
