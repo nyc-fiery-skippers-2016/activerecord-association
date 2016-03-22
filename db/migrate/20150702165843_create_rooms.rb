@@ -7,5 +7,7 @@ class CreateRooms < ActiveRecord::Migration
 
       t.timestamps(null: false)
     end
+
+    execute("INSERT INTO sqlite_sequence (name, seq) VALUES ('rooms', 4000)")
   end
 end
