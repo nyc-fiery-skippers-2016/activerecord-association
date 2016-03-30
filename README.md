@@ -7,7 +7,7 @@ This challenge is a drill to work with [Active Record associations][RailsGuides 
 
 *Figure 1*. Schema design for this challenge.
 
-We'll focus on writing associations in this challenge, but let's imagine that we're building a full application that allows for booking hotel rooms. Hotels register their rooms with our application, and users can book the hotels' rooms.  We won't worry about booking dates and other real-world details.  We just want to focus on how we can association our models with each other.
+We'll focus on writing associations in this challenge, but let's imagine that we're building a full application that allows for booking hotel rooms. Hotels register their rooms with our application, and users can book the hotels' rooms.  We won't worry about booking dates and other real-world details.  We just want to focus on how we can associate our models with each other.
  
 When our associations have been written, we'll be able to answer the following questions.
 
